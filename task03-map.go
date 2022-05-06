@@ -1,6 +1,15 @@
 package homework
 
+import "sort"
+
 func sortMapValues(input map[int]string) (result []string) {
-	//Place your code here
+	var slice []int
+	for k := range input {
+		slice = append(slice, k)
+	}
+	sort.Ints(slice)
+	for _, v := range slice {
+		result = append(result, input[v])
+	}
 	return
 }
